@@ -1,0 +1,8 @@
+:root {
+    --navy: #5a4ff6;
+    --blue: #27aae1;
+}
+
+div{
+    color: var(--navy);
+}
