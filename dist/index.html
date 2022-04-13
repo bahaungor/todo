@@ -10,6 +10,52 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <div class="main-container">
+        <header class="header">
+            <div class="side-menu-opener">☰</div>
+            <div class="header-title">✓ &nbsp;ToDo List</div>
+        </header>
+        <main class="main">
+            <div class="sidebar">
+                <div class="sidebar-title">Home</div>
+                <div class="sidebar-item active">All Tasks</div>
+                <div class="sidebar-item">Today</div>
+                <div class="sidebar-item">Next 7 Days</div>
+                <div class="sidebar-item">Important</div>
+                <div class="sidebar-title">Projects</div>
+                <div class="projects">
+                    <div class="project">
+                        <div class="project-title">Deneme</div>
+                        <img class="menu-icon edit-button" src="../src/images/edit.png" alt="edit">
+                        <img class="menu-icon delete-button" src="../src/images/delete.png" alt="delete">
+                    </div>
+                    <div class="project">
+                        <div class="project-title">Başka proje</div>
+                        <img class="menu-icon edit-button" src="../src/images/edit.png" alt="edit">
+                        <img class="menu-icon delete-button" src="../src/images/delete.png" alt="delete">
+                    </div>
+                    <div class="project">
+                        <div class="project-title">Another Project</div>
+                        <img class="menu-icon edit-button" src="../src/images/edit.png" alt="edit">
+                        <img class="menu-icon delete-button" src="../src/images/delete.png" alt="delete">
+                    </div>
+                </div>
+                <form class="project-form" action="add project" method="post">
+                    <div><input class="project-form-input" type="text"></div>
+                    <div class="project-form-button-container">
+                        <button class="project-form-button add" type="submit">Submit</button>
+                        <button class="project-form-button cancel" type="button">Cancel</button>
+                    </div>
+                </form>
+                <button class="add-button" type="button">Add Project</button>
+            </div>
+            <div class="content">
+                <div class="content-title">All Tasks</div>
+                <div class="tasks">Yay! No Tasks!</div>
+                <div class="add-task add-button hidden">Add Task</div>
+            </div>
+        </main>
+        <footer class="footer">Copyright © <script>document.write(new Date().getFullYear())</script> Bahadir UNGOR </footer>
+    </div>
 </body>
 </html>
