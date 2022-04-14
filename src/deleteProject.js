@@ -1,5 +1,8 @@
+import { updateIDs } from "./addUpdateProject";
 import { projects } from "./projectLoader";
-import { selectedProject } from ".";
+import { loadProjects } from "./projectLoader";
+import { selectedProject } from "./sidebarProjectListFunctionality";
+
 
 const deleteButtons = document.querySelectorAll(".delete-button");
 deleteButtons.forEach(button => button.addEventListener("click", deleteThatProject));
@@ -9,8 +12,9 @@ function deleteThatProject(e){
     if(decision){
         projects.splice(selectedProject, 1);
         localStorage.setItem("projects_by_baha", JSON.stringify(projects));
-        loadProjects();
     }
+    updateIDs();
+    loadProjects();
 }
 
 export { deleteThatProject }

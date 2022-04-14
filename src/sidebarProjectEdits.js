@@ -1,5 +1,8 @@
-import { formEdit } from ".";
+import {formEdit} from "./addUpdateProject"
+import { openProjectForm } from "./projectFormOpenerCloser";
+import {form} from "./addUpdateProject"
 
+let selectedProject = "";
 function sidebarProjectsEdit(){
     const editButtons = document.querySelectorAll(".edit-button");
     editButtons.forEach(button => button.addEventListener("click", viewProjectEditForm));
@@ -10,4 +13,4 @@ function sidebarProjectsEdit(){
     }
 }
 
-export {sidebarProjectsEdit, formEdit}
+export {sidebarProjectsEdit}
