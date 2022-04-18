@@ -52,19 +52,19 @@
             <div class="content">
                 <div class="content-title">All Tasks</div>
                 <div class="tasks">
-                    <div class="task-container">
-                        <input type="checkbox" name="task-done" id="task-done">
+                    <div class="task-container" data-id="0">
+                        <input type="checkbox" id="task-done">
                         <div class="task-title">Deneme</div>
                         <div class="due-date">20/11/2022</div>
-                        <input type="checkbox" name="task-importance" id="task-importance">
+                        <input type="checkbox" id="task-importance">
                         <div class="task-details">uzun uzun detay olabilir, dikkatli olmak lazım</div>
                         <img class="menu-icon delete-button" src="../src/images/delete.png">
                     </div>
-                    <div class="task-container">
-                        <input type="checkbox" name="task-done" id="task-done">
+                    <div class="task-container" data-id="1">
+                        <input type="checkbox" id="task-done">
                         <div class="task-title">Deneme</div>
                         <div class="due-date">20/11/2022</div>
-                        <input type="checkbox" name="task-importance" id="task-importance">
+                        <input type="checkbox" id="task-importance">
                         <div class="task-details">uzun uzun detay olabilir, dikkatli olmak lazım</div>
                         <img class="menu-icon delete-button" src="../src/images/delete.png">
                     </div>
@@ -72,7 +72,7 @@
                 <div class="add-task add-button hidden">Add New Task</div>
                 <form class="task-form hidden" action="add task" method="post">
                     <div><label for="task-title">Title:</label></div>
-                    <input type="text" name="task-title" id="task-title" required>
+                    <input type="text" name="task-title" id="task-title" required autocomplete="off">
                     <div><label for="task-details">Details:</label></div>
                     <textarea name="task-details" id="task-details" cols="30" rows="4"></textarea>
                     <div><label for="task-due-date">Due Date:</label></div>

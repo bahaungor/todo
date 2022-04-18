@@ -1,4 +1,5 @@
 import { menubuttons } from "./homeButtonsFunctions";
+import { loadProjectsTasks } from "./taskLoader";
 
 let selectedProject = "";
 function sidebarProjectFunctionality(){
@@ -8,6 +9,7 @@ function sidebarProjectFunctionality(){
         displayProjectTasks(e);
         updateContentTitle(e);
         updateSelectedProject(e);
+        loadProjectsTasks();
     }));
     function highlightProject(e){
         sidebarProjects.forEach(project => project.classList.remove("active"));

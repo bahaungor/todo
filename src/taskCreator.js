@@ -28,14 +28,15 @@ function createTask(e){
     const due = document.querySelector(".task-form #task-due-date").value;
     const newTask = taskConstructor(title, detail, due);
     projects[selectedProject].tasks.push(newTask);
-    console.log(projects)
+    console.log(projects[selectedProject].tasks)
     closeTaskForm();
 }
 
 function taskConstructor(title, detail, due){
     const done = false;
     const importantance = false;
-    return {done, title, detail, due, importantance}
+    const id = projects[selectedProject].tasks.length;
+    return {id, done, title, detail, due, importantance}
 }
 
 export {addTaskButton}
