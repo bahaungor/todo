@@ -154,8 +154,11 @@ body{
     border: 2px solid black;
     border-radius: 4px;
     cursor: pointer;
-    margin: 10px auto;
     font-weight: 600;
+    max-width: 150px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .add-button:hover{
@@ -163,7 +166,7 @@ body{
 }
 
 .content{
-    padding: 15px;
+    padding: 25px;
 }
 
 .content-title{
@@ -172,11 +175,139 @@ body{
     padding: 10px;
     font-size: 2rem;
     text-align: center;
+    border-radius: 3px;
 }
 
 .tasks{
-    padding: 20px;
-    font-size: 1.6rem;
+    padding: 30px 0;
+    font-size: 1rem;
+    display: grid;
+    gap: 10px;
+}
+
+.task-container{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    cursor: pointer;
+    grid:
+    "done title date importance delete" auto
+    "details details details details details" auto
+    / auto 1fr auto auto auto;
+    column-gap: 15px;
+}
+
+.task-container #task-done{
+    grid-area: done;
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:50%;
+    border:2px solid #555;
+    transform: translate(0, 2px);
+    cursor: pointer;
+}
+
+.task-container #task-done:checked::before {
+    content: "✓";
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    top: -12px;
+}
+
+.task-container .task-title{
+    grid-area: title;
+}
+
+.task-container .due-date{
+    grid-area: date;
+}
+
+.task-container #task-importance{
+    grid-area: importance;
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    position: relative;
+    top: -7px;
+}
+
+.task-container #task-importance::before {
+    content: "\2606";
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.task-container #task-importance:checked::before {
+    content: "\2605";
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: gold;
+}
+
+.task-container .delete-button{
+    grid-area: delete;
+}
+
+.task-container .task-details{
+    grid-area: details;
+}
+
+.task-form{
+    background: white;
+    padding: 15px;
+}
+
+.task-form input[type="text"],
+.task-form input[type="date"],
+.task-form textarea{
+    outline: none;
+    border: 2px solid black;
+    resize: none;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 1rem;
+}
+
+.task-form input[type="text"],
+.task-form input[type="date"]{
+    height: 30px;
+}
+
+.task-form-button-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 15px;
+}
+
+.task-form-button-container .add,
+.task-form-button-container .cancel{
+    border: none;
+    padding: 7px 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.task-form-button-container .add:hover,
+.task-form-button-container .cancel:hover{
+    box-shadow: var(--lighten);
+}
+
+.task-form-button-container .add{
+    background: green;
+}
+
+.task-form-button-container .cancel{
+    background: crimson;
 }
 
 .footer{

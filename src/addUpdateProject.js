@@ -31,7 +31,8 @@ function addUpdateProject(e){
 function projectCreator(projectTitle){
     console.log("factory called")
     const id = projects.length;
-    return {projectTitle, id};
+    const tasks = [];
+    return {projectTitle, id, tasks};
 }
 
 function updateIDs(){
