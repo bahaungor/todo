@@ -3,7 +3,7 @@ import { loadProjects } from "./projectLoader";
 import {formEdit, selectedProject} from "./addUpdateProject"
 import {addTaskButton} from "./taskCreator"
 import {loadProjectsTasks} from "./taskLoader"
+import {listAllTasks} from "./homeButtonsFunctions"
 
 loadProjects();
-
-// export {formEdit, selectedProject}
+listAllTasks();

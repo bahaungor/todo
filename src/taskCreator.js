@@ -1,5 +1,6 @@
 import { selectedProject } from "./sidebarProjectListFunctionality";
-import {projects} from "./projectLoader"
+import { projects } from "./projectLoader"
+import { loadProjectsTasks } from "./taskLoader";
 
 const taskForm = document.querySelector(".task-form");
 const addTaskButton = document.querySelector(".add-task");
@@ -30,13 +31,16 @@ function createTask(e){
     projects[selectedProject].tasks.push(newTask);
     console.log(projects[selectedProject].tasks)
     closeTaskForm();
+    localStorage.setItem("projects_by_baha", JSON.stringify(projects));
+    loadProjectsTasks();
 }
 
 function taskConstructor(title, detail, due){
     const done = false;
-    const importantance = false;
+    const importance = false;
     const id = projects[selectedProject].tasks.length;
-    return {id, done, title, detail, due, importantance}
+    const projectID = projects[selectedProject].id;
+    return {id, done, title, detail, due, importance, projectID}
 }
 
 export {addTaskButton}

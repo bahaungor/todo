@@ -9,7 +9,6 @@ form.addEventListener("submit", addUpdateProject);
 function addUpdateProject(e){
     e.preventDefault();
     if(formEdit){
-        console.log(selectedProject)
         projects[selectedProject].projectTitle = form.querySelector(".project-form-input").value;
         formEdit = false;
         localStorage.setItem("projects_by_baha", JSON.stringify(projects));
@@ -19,11 +18,10 @@ function addUpdateProject(e){
         const projectTitle = document.querySelector(".project-form-input").value;
         const newProject = projectCreator(projectTitle);
         projects.push(newProject);
-        console.log(projects);
         localStorage.setItem("projects_by_baha", JSON.stringify(projects));
-        updateIDs();
         loadProjects();
         closeProjectForm();
+        document.querySelector(".tasks").innerHTML = "";
     }
 
 }
