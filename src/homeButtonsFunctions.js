@@ -51,7 +51,7 @@ function listTodaysTasks(){
         return project.tasks.map(task => {
             if(compareAsc(Date.parse(task.due), Date.parse(new Date().toISOString().split('T')[0])) == 0){
                 return `
-                <div class="task-container" data-id="${task.id}">
+                <div class="task-container" data-id="${task.id}" data-project="${task.projectID}">
                     <input type="checkbox" id="task-done" ${(task.done) ? "checked": ""}>
                     <div class="task-title">${task.title}</div>
                     <div class="due-date">${task.due}</div>
@@ -73,7 +73,7 @@ function listImportantTasks(){
         return project.tasks.map(task => {
             if(task.importance == true){
                 return `
-                <div class="task-container" data-id="${task.id}">
+                <div class="task-container" data-id="${task.id}" data-project="${task.projectID}">
                     <input type="checkbox" id="task-done" ${(task.done) ? "checked": ""}>
                     <div class="task-title">${task.title}</div>
                     <div class="due-date">${task.due}</div>

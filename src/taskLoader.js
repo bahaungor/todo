@@ -6,7 +6,7 @@ const tasks = document.querySelector(".tasks");
 
 function loadProjectsTasks(){
     console.log(projects);
-    if(projects[selectedProject--].tasks.length == 0 || selectedProject == ""){
+    if(projects[selectedProject].tasks.length == 0 || selectedProject == ""){
         tasks.innerHTML = "";
         tasks.textContent = "Yayyyy! No Tasks!";
     } else {
@@ -24,6 +24,7 @@ function loadProjectsTasks(){
         tasks.innerHTML = "";
         tasks.innerHTML = html;
         addFunctionalityToTasks();
+
     }
     
 }
