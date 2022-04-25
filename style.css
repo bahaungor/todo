@@ -1,6 +1,6 @@
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,17 +16,18 @@
     --navyToBlue: linear-gradient(to right, var(--navy), var(--blue));
 }
 
-body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.main-container{
+.main-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.header{
+.header {
     height: 80px;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -40,36 +41,36 @@ body{
     border-bottom: 3px solid crimson;
 }
 
-.side-menu-opener{
+.side-menu-opener {
     cursor: pointer;
     padding: 3px 6px;
     border-radius: 4px;
 }
 
-.side-menu-opener:hover{ 
-    box-shadow: var(--lighten)
+.side-menu-opener:hover {
+    box-shadow: var(--lighten);
 }
 
-.header-title{
+.header-title {
     font-size: 2.5rem;
     font-weight: 700;
 }
 
-.main{
+.main {
     flex: 1;
     display: grid;
     grid-template-columns: 350px 1fr;
     background-color: var(--lightgray);
 }
 
-.sidebar{
+.sidebar {
     background-color: white;
     font-size: 1.3rem;
     padding: 10px 20px;
     overflow: auto;
 }
 
-.sidebar-title{
+.sidebar-title {
     font-size: 1.5rem;
     font-weight: 600;
     border-bottom: 2px solid var(--black);
@@ -77,56 +78,56 @@ body{
     padding-bottom: 5px;
 }
 
-.sidebar-item{
+.sidebar-item {
     margin-bottom: 5px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     padding: 5px 10px;
 }
 
-.sidebar-item:hover{
+.sidebar-item:hover {
     box-shadow: var(--darken);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.active{
+.active {
     background-image: var(--navyToBlue);
     border-left: 3px solid crimson;
     color: white;
 }
 
-.project{
+.project {
     margin-bottom: 5px;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 0 5px 5px 0;
 }
 
-.project:hover{
+.project:hover {
     box-shadow: var(--darken);
 }
 
-.project{
+.project {
     display: grid;
     grid-template-columns: 1fr auto auto;
     align-items: center;
     gap: 5px;
 }
 
-.menu-icon{
+.menu-icon {
     width: 20px;
     height: max-content;
 }
 
-.project-form{
+.project-form {
     justify-content: space-between;
     display: none; /*flex*/
 }
 
-.project-form-input{
+.project-form-input {
     border-radius: 5px;
     outline: none;
     border: 2px solid black;
@@ -134,7 +135,7 @@ body{
     width: 100%;
 }
 
-.project-form-button{
+.project-form-button {
     border: none;
     padding: 5px 13px;
     cursor: pointer;
@@ -142,14 +143,14 @@ body{
     color: white;
 }
 
-.project-form-button.add{
+.project-form-button.add {
     background: green;
 }
-.project-form-button.cancel{
+.project-form-button.cancel {
     background: crimson;
 }
 
-.add-button{
+.add-button {
     padding: 6px 20px;
     border: 2px solid black;
     border-radius: 4px;
@@ -161,15 +162,15 @@ body{
     text-align: center;
 }
 
-.add-button:hover{
+.add-button:hover {
     box-shadow: var(--darken);
 }
 
-.content{
+.content {
     padding: 25px;
 }
 
-.content-title{
+.content-title {
     background-image: var(--navyToBlue);
     color: white;
     padding: 10px;
@@ -178,93 +179,93 @@ body{
     border-radius: 3px;
 }
 
-.tasks{
+.tasks {
     padding: 30px 0;
     font-size: 1rem;
     display: grid;
     gap: 10px;
 }
 
-.task-container{
+.task-container {
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
     display: grid;
     cursor: pointer;
     grid:
-    "done title date importance delete" auto
-    "details details details details details" auto
-    / auto 1fr auto auto auto;
+        'done title date importance delete' auto
+        'details details details details details' auto
+        / auto 1fr auto auto auto;
     column-gap: 15px;
 }
 
-.task-container #task-done{
+.task-container #task-done {
     grid-area: done;
-    -webkit-appearance:none;
-    width:20px;
-    height:20px;
-    background:white;
-    border-radius:50%;
-    border:2px solid #555;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #555;
     transform: translate(0, 2px);
     cursor: pointer;
 }
 
 .task-container #task-done:checked::before {
-    content: "✓";
+    content: '✓';
     font-size: 1.5rem;
     font-weight: 600;
     position: relative;
     top: -12px;
 }
 
-.task-container .task-title{
+.task-container .task-title {
     grid-area: title;
 }
 
-.task-container .due-date{
+.task-container .due-date {
     grid-area: date;
 }
 
-.task-container #task-importance{
+.task-container #task-importance {
     grid-area: importance;
-    -webkit-appearance:none;
-    width:20px;
-    height:20px;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     position: relative;
     top: -7px;
 }
 
 .task-container #task-importance::before {
-    content: "\2606";
+    content: '\2606';
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .task-container #task-importance:checked::before {
-    content: "\2605";
+    content: '\2605';
     font-size: 1.5rem;
     font-weight: 600;
     color: gold;
 }
 
-.task-container .delete-button{
+.task-container .delete-button {
     grid-area: delete;
 }
 
-.task-container .task-details{
+.task-container .task-details {
     grid-area: details;
 }
 
-.task-form{
+.task-form {
     background: white;
     padding: 15px;
 }
 
-.task-form input[type="text"],
-.task-form input[type="date"],
-.task-form textarea{
+.task-form input[type='text'],
+.task-form input[type='date'],
+.task-form textarea {
     outline: none;
     border: 2px solid black;
     resize: none;
@@ -275,12 +276,12 @@ body{
     font-size: 1rem;
 }
 
-.task-form input[type="text"],
-.task-form input[type="date"]{
+.task-form input[type='text'],
+.task-form input[type='date'] {
     height: 30px;
 }
 
-.task-form-button-container{
+.task-form-button-container {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
@@ -288,7 +289,7 @@ body{
 }
 
 .task-form-button-container .add,
-.task-form-button-container .cancel{
+.task-form-button-container .cancel {
     border: none;
     padding: 7px 17px;
     border-radius: 5px;
@@ -298,28 +299,27 @@ body{
 }
 
 .task-form-button-container .add:hover,
-.task-form-button-container .cancel:hover{
+.task-form-button-container .cancel:hover {
     box-shadow: var(--lighten);
 }
 
-.task-form-button-container .add{
+.task-form-button-container .add {
     background: green;
 }
 
-.task-form-button-container .cancel{
+.task-form-button-container .cancel {
     background: crimson;
 }
 
-.footer{
+.footer {
     padding: 10px;
     text-align: center;
     background-color: black;
     color: white;
 }
 
-@media only screen and (max-width: 600px){
-    .main{
+@media only screen and (max-width: 600px) {
+    .main {
         grid-template-columns: 1fr;
     }
 }
-
