@@ -11,14 +11,14 @@ function addUpdateProject(e){
     if(formEdit){
         projects[selectedProject].projectTitle = form.querySelector(".project-form-input").value;
         formEdit = false;
-        localStorage.setItem("projects_by_baha", JSON.stringify(projects));
+        localStorage.setItem("projects_by_baha",JSON.stringify(projects));
         loadProjects();
         closeProjectForm();
     } else {
         const projectTitle = document.querySelector(".project-form-input").value;
         const newProject = projectCreator(projectTitle);
         projects.push(newProject);
-        localStorage.setItem("projects_by_baha", JSON.stringify(projects));
+        localStorage.setItem("projects_by_baha",JSON.stringify(projects));
         loadProjects();
         closeProjectForm();
         document.querySelector(".tasks").innerHTML = "";
