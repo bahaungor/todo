@@ -1,10 +1,4 @@
-import { sidebarOpener } from './sidebarOpener'
-import { loadProjects } from './projectLoader'
-import { formEdit, selectedProject } from './addUpdateProject'
-import { addTaskButton } from './taskCreator'
-import { loadProjectsTasks } from './taskLoader'
-import { listAllTasks } from './homeButtonsFunctions'
-import { taskDeleteFunction } from './taskDeleter'
+import { setTheme } from './themeUtils';
+import "./style.css";
 
-loadProjects()
-listAllTasks()
+document.querySelector('.tt').addEventListener('click', setTheme)
