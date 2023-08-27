@@ -2,7 +2,9 @@
 
 :root.dark {
     --border: 1px solid whitesmoke;
-    --bg: black;
+    --bg: rgb(0, 0, 0);
+    --bg2: rgb(29, 29, 29);
+    --bg3: rgb(39, 39, 39);
     --text: white;
     --lightgray: #f0eef1;
     --green: rgb(105, 247, 105);
@@ -17,7 +19,9 @@
   
 :root {
     --border: 1px solid black;
-    --bg: whitesmoke;
+    --bg: rgb(255, 255, 255);
+    --bg2: rgb(250, 250, 250);
+    --bg3: rgb(245, 245, 245);
     --text: black;
     --lightgray: #f0eef1;
     --green: rgb(105, 247, 105);
@@ -56,6 +60,7 @@ header{
     padding: 10px;
     font-family: var(--font);
     border-bottom: var(--border);
+    background-color: var(--bg2);
 }
 
 .header{
@@ -71,6 +76,24 @@ header img{
     font-size: 1.5rem;
     position: absolute;
     right: 20px;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar{
+    background-color: var(--bg3);
+    min-width: 300px;
+    flex: 2;
+}
+
+.mainContainer{
+    flex: 5;
+    min-width: 600px;
+    width: 100%;
 }
 
 nav{
@@ -91,13 +114,10 @@ nav > *:hover{
     padding-bottom: 0px;
 }
 
-main{
-    flex: 1;
-}
-
 footer{
     border-top: var(--border);
     text-align: center;
     padding: 10px;
     font-size: 1.2rem;
+    background-color: var(--bg2);
 }
