@@ -86,14 +86,65 @@ main{
 
 .sidebar{
     background-color: var(--bg3);
-    min-width: 300px;
     flex: 2;
+    padding: 5px;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.sidebar > h2 {
+    text-align: center;
+}
+
+.sidebar > .button, .projectList > .button{
+    padding: 5px 20px;
+    background-color: var(--bg);
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.sidebar .addProject{
+    margin-top: 20px;
+}
+
+.sidebar > .newProjectForm {
+    margin-top: 20px;
+}
+
+.sidebar > .newProjectForm > input{
+    width: 100%;
+    padding: 7px;
+}
+
+.sidebar > .newProjectForm > .row{
+    display: flex;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: none;
+    gap: 5px;
+}
+
+.row > .button{
+    flex: 1;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.row div:first-child {
+    background-color: var(--green);
+}
+
+.row div:last-child {
+    background-color: var(--red);
 }
 
 .mainContainer{
-    flex: 5;
-    min-width: 600px;
+    flex: 7;
     width: 100%;
+    min-width: 300px;
 }
 
 nav{
@@ -114,10 +165,76 @@ nav > *:hover{
     padding-bottom: 0px;
 }
 
+.mainContainer > .taskFormcontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.mainContainer > .taskFormcontainer > .newTaskForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--bg2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.newTaskForm > input{
+    border-radius: 7px;
+    border: none;
+    padding: 7px 5px;
+}
+
+.mainContainer > .taskFormcontainer > .newTaskForm > div{
+    display: flex;
+    gap: 10px;
+}
+
+.container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    padding: 20px;
+}
+
+.container > .taskContainer{
+    background-color: var(--bg3);
+    padding: 10px;
+}
+
 footer{
     border-top: var(--border);
     text-align: center;
     padding: 10px;
     font-size: 1.2rem;
     background-color: var(--bg2);
+}
+
+.addTask{
+    background-image: var(--navyToBlue);
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 60px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.none{
+    display: none;
+    padding: 20px;
 }

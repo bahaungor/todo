@@ -14,16 +14,69 @@
         <span class="tt">🌙</span>
     </header>
     <main>
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <h2>Projects</h2>
+            <div class="projectList"></div>
+            <div class="button addProject">+ Add Project</div>
+            <div class="newProjectForm hidden">
+                <input type="text" name="newProjectName" id="newProjectName" class="row" placeholder="Project Name">
+                <div class="row">
+                    <div class="button add">Add</div>
+                    <div class="button cancel">Cancel</div>
+                </div>
+            </div>
+        </div>
         <div class="mainContainer">
             <nav>
                 <div class="menuItem">All</div>
                 <div class="menuItem">Today</div>
                 <div class="menuItem">This Week</div>
             </nav>
-            <div class="container"></div>
+            <div class="taskFormcontainer">
+                <div class="newTaskForm none">
+                    <h3>Add New Task</h3>
+                    <input type="text" placeholder="Task Title">
+                    <input type="text" placeholder="Task Description">
+                    <input type="text" name="tproject" id="tproject" list="mySuggestion" placeholder="Project Name (Optional)"/>
+                    <datalist id="mySuggestion">
+                        <option value="Exterior Spec">Exterior Spec</option>
+                        <option value="Tire Spec">Tire Spec</option>
+                    </datalist>
+                    <div>
+                        <div>
+                            <label for="tdate">Due date</label>
+                            <input type="date" name="tdate" id="tdate">
+                        </div>
+                        <div>
+                            <label for="tdone">Completed?</label>
+                            <input type="checkbox" name="tdone" id="tdone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="button">Add</div>
+                        <div class="button">Cancel</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="taskContainer">
+                    <h3 class="taskTitle">Platform kurulumu</h3>
+                    <div class="taskDescription">Platform kurulup kamera bağlantıları ayarlanacak</div>
+                    <div class="taskProject">Exterior Spec</div>
+                    <div class="taskDate">23/02/2018</div>
+                    <div class="taskCompletion">Completed</div>
+                </div>
+                <div class="taskContainer">
+                    <h3 class="taskTitle">Platform kurulumu</h3>
+                    <div class="taskDescription">Platform kurulup kamera bağlantıları ayarlanacak</div>
+                    <div class="taskProject">Exterior Spec</div>
+                    <div class="taskDate">23/02/2018</div>
+                    <div class="taskCompletion">Completed</div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>Copyright © Bahadir UNGOR</footer>
+    <span class="addTask">+</span>
 </body>
 </html>
