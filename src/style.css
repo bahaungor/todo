@@ -99,10 +99,23 @@ main{
 .sidebar > .button, .projectList > .button{
     padding: 5px 20px;
     background-color: var(--bg);
-    cursor: pointer;
+
     margin-top: 5px;
     border-radius: 8px;
+    display: flex;
 }
+
+.sidebar > .button, .projectList > .button > .edit{
+    margin-right: 5px;
+}
+
+.sidebar > .button, .projectList > .button > *{
+    cursor: pointer;
+}
+
+.sidebar > .button, .projectList > .button > .projectName{
+    margin-right: auto;
+} 
 
 .sidebar .addProject{
     margin-top: 20px;
@@ -117,8 +130,10 @@ main{
     padding: 7px;
 }
 
-.sidebar > .newProjectForm > .row{
+.row {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     border-radius: 7px;
     border: none;
@@ -126,11 +141,12 @@ main{
 }
 
 .row > .button{
-    flex: 1;
     text-align: center;
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .row div:first-child {
@@ -152,6 +168,7 @@ nav{
     justify-content: space-evenly;
     align-items: center; /* Without this line, animation won't work */
     font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 nav > *{
@@ -169,7 +186,6 @@ nav > *:hover{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
 }
 
 .mainContainer > .taskFormcontainer > .newTaskForm{
@@ -234,7 +250,6 @@ footer{
     visibility: hidden;
 }
 
-.none{
+.taskFormcontainer > .newTaskForm.none{
     display: none;
-    padding: 20px;
 }
