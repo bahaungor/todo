@@ -15,21 +15,21 @@ function closeProjectForm(){
 }
 
 function addProject(){
-    const projects = JSON.parse(localStorage.getItem("projects")) || [];
+    const projects = JSON.parse(localStorage.getItem("projects_todolist_baha")) || [];
     if (document.querySelector('#newProjectName').value == ''){
         alert("Please enter project name")
     } else if (projects.includes(document.querySelector('#newProjectName').value.toLowerCase())){
         alert("This project already exists.")
     } else {
         projects.push(document.querySelector('#newProjectName').value.toLowerCase())
-        localStorage.setItem("projects", JSON.stringify(projects));
+        localStorage.setItem("projects_todolist_baha", JSON.stringify(projects));
         loadProjects()
         closeProjectForm()
     }
 }
 
 function loadProjects(){
-    const projects = JSON.parse(localStorage.getItem("projects")) || [];
+    const projects = JSON.parse(localStorage.getItem("projects_todolist_baha")) || [];
     const projectList = document.querySelector('.projectList')
     projectList.innerHTML = ''
     if (projects.length == 0){
@@ -64,14 +64,35 @@ function loadProjects(){
 
 function editProjectName(){
     openProjectForm()
+    const projects = JSON.parse(localStorage.getItem("projects_todolist_baha")) || [];
+    const selectedProject = this.parentNode.dataset.id
+    document.querySelector('#newProjectName').value = projects[selectedProject]
+    const addButton = document.querySelector('.newProjectForm > .row > .add')
+    addButton.removeEventListener('click', addProject)
+    addButton.addEventListener('click', editName)
+
+    function editName(){
+        if (document.querySelector('#newProjectName').value == ''){
+            alert("Please enter project name")
+        } else if (projects.includes(document.querySelector('#newProjectName').value.toLowerCase())){
+            alert("This project already exists.")
+        } else {
+            projects[selectedProject] = document.querySelector('#newProjectName').value
+            localStorage.setItem("projects_todolist_baha", JSON.stringify(projects));
+            addButton.removeEventListener('click', editName)
+            addButton.addEventListener('click', addProject)
+            loadProjects()
+            closeProjectForm()
+        }
+    }
 }
 
 function deleteProject(){
     const reply = confirm('Are you sure you want to delete this project & every task inside it?')
     if (reply){
-        const projects = JSON.parse(localStorage.getItem("projects"))
+        const projects = JSON.parse(localStorage.getItem("projects_todolist_baha"))
         projects.splice(this.parentNode.dataset.id, 1)
-        localStorage.setItem("projects", JSON.stringify(projects));
+        localStorage.setItem("projects_todolist_baha", JSON.stringify(projects));
         loadProjects()
     }
 }
