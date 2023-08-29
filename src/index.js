@@ -1,10 +1,17 @@
-import { sidebarOpener } from './sidebarOpener'
-import { loadProjects } from './projectLoader'
-import { formEdit, selectedProject } from './addUpdateProject'
-import { addTaskButton } from './taskCreator'
-import { loadProjectsTasks } from './taskLoader'
-import { listAllTasks } from './homeButtonsFunctions'
-import { taskDeleteFunction } from './taskDeleter'
+import { setTheme } from './themeUtils';
+import { openProjectForm, closeProjectForm, addProject, loadProjects, fillProjectSelections} from './projectForm';
+import { loadAllTasks, openTaskForm, closeTaskForm, submitTaskForm, openTaskEditForm } from './taskUtils';
+import "./style.css";
 
-loadProjects()
-listAllTasks()
+document.querySelector('.tt').addEventListener('click', setTheme)
+document.querySelector('.button.addProject').addEventListener('click', openProjectForm)
+document.querySelector('.newProjectForm > .row > .add').addEventListener('click', addProject)
+document.querySelector('.newProjectForm > .row > .cancel').addEventListener('click', closeProjectForm)
+
+document.querySelector('.addTask').addEventListener('click', openTaskForm)
+document.querySelector('.newTaskForm > .row > .add').addEventListener('click', submitTaskForm)
+document.querySelector('.newTaskForm > .row > .cancel').addEventListener('click', closeTaskForm)
+
+window.addEventListener('load', loadProjects)
+window.addEventListener('load', loadAllTasks)
+window.addEventListener('load', fillProjectSelections)
