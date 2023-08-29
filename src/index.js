@@ -11,7 +11,6 @@ document.querySelector('.newProjectForm > .row > .cancel').addEventListener('cli
 document.querySelector('.addTask').addEventListener('click', openTaskForm)
 document.querySelector('.newTaskForm > .row > .add').addEventListener('click', submitTaskForm)
 document.querySelector('.newTaskForm > .row > .cancel').addEventListener('click', closeTaskForm)
-document.querySelectorAll('.taskContainer').forEach(container => container.addEventListener('click', openTaskEditForm));
 
 window.addEventListener('load', loadProjects)
 window.addEventListener('load', loadAllTasks)
