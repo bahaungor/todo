@@ -1,6 +1,6 @@
 import { setTheme } from './themeUtils';
-import { openProjectForm, closeProjectForm, addProject, loadProjects} from './projectForm';
-import { loadAllTasks, openTaskForm, closeTaskForm, submitTaskForm } from './taskUtils';
+import { openProjectForm, closeProjectForm, addProject, loadProjects, fillProjectSelections} from './projectForm';
+import { loadAllTasks, openTaskForm, closeTaskForm, submitTaskForm, openTaskEditForm } from './taskUtils';
 import "./style.css";
 
 document.querySelector('.tt').addEventListener('click', setTheme)
@@ -11,6 +11,8 @@ document.querySelector('.newProjectForm > .row > .cancel').addEventListener('cli
 document.querySelector('.addTask').addEventListener('click', openTaskForm)
 document.querySelector('.newTaskForm > .row > .add').addEventListener('click', submitTaskForm)
 document.querySelector('.newTaskForm > .row > .cancel').addEventListener('click', closeTaskForm)
+document.querySelectorAll('.taskContainer').forEach(container => container.addEventListener('click', openTaskEditForm));
 
 window.addEventListener('load', loadProjects)
 window.addEventListener('load', loadAllTasks)
+window.addEventListener('load', fillProjectSelections)

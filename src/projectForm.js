@@ -25,6 +25,7 @@ function addProject(){
         localStorage.setItem("projects_todolist_baha", JSON.stringify(projects));
         loadProjects()
         closeProjectForm()
+        fillProjectSelections()
     }
 }
 
@@ -85,6 +86,7 @@ function editProjectName(){
             closeProjectForm()
         }
     }
+    fillProjectSelections()
 }
 
 function deleteProject(){
@@ -97,4 +99,25 @@ function deleteProject(){
     }
 }
 
-export {openProjectForm, closeProjectForm, addProject, loadProjects}
+function fillProjectSelections(){
+    const projects = JSON.parse(localStorage.getItem("projects_todolist_baha")) || [];
+    const selections = document.querySelector('#tproject')
+    selections.innerHTML = ''
+    const defaultOpt = document.createElement('option')
+    defaultOpt.setAttribute('value', '')
+    defaultOpt.setAttribute('selected','')
+    defaultOpt.textContent = '--Select Project (Optional)--'
+    selections.appendChild(defaultOpt)
+    if (projects.length == 0){
+        return
+    } else {
+        for (let i = 0; i < projects.length; i++) {
+            const opt = document.createElement('option')
+            opt.setAttribute('value', projects[i])
+            opt.textContent = projects[i]
+            selections.appendChild(opt)
+        }
+    }
+}
+
+export {openProjectForm, closeProjectForm, addProject, loadProjects, fillProjectSelections}

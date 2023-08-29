@@ -161,6 +161,7 @@ main{
     flex: 7;
     width: 100%;
     min-width: 300px;
+    padding: 20px;
 }
 
 nav{
@@ -186,7 +187,6 @@ nav > *:hover{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0  20px;
     border-radius: 10px;
 }
 
@@ -214,13 +214,13 @@ nav > *:hover{
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-    padding: 20px;
 }
 
 .container > .taskContainer{
     background-color: var(--bg3);
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 footer{
